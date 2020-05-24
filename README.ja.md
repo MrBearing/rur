@@ -11,7 +11,9 @@ e-Series : v 5.8
 ## 開発環境
 
 OS: Ubuntu 18.04
-e-Series v5.8 on VirtualBox
+e-Series v5.8
+
+
 
 (現在開発中,以下は妄想です。)
 
