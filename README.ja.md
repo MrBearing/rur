@@ -4,11 +4,11 @@ Rust Universal Robots library
 
 NOT "Rossum's Universal Robots"
 
-## target control box version
+## コントロールボックスの対象バージョン
 
 e-Series : v 5.8
 
-## developing environment
+## 開発環境
 
 OS: Ubuntu 18.04
 e-Series v5.8 on VirtualBox
