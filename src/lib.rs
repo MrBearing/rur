@@ -1,3 +1,4 @@
-pub fn send_script(script:String, address :String, port: u32){
+pub mod script;
+pub mod dashboard_server;
 
-}
+

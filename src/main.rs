@@ -1,4 +1,9 @@
+extern crate rur;
+
 use clap::Clap;
+use rur::script;
+use rur::dashboard_server;
+
 
 #[derive(Clap)]
 #[clap(version = "1.0", author = "Takumi Okamoto <takumi1988okamoto@gmail.com>")]
@@ -9,17 +14,20 @@ struct Opts {
 
 #[derive(Clap)]
 enum SubCommand {
-    #[clap()]
+    #[clap(about = "send script to UR Robot")]
     SendScript(SendScript),
-    #[clap()]
+    #[clap(about = "subcommand for controlling dashboard server")]
     Ds(DashboardServer),
 }
 
 
 #[derive(Clap,Debug)]
 struct SendScript{
-    input: String,
-    input2: String,
+    #[clap(long,default_value="127.0.0.1")]
+    host_name:String,
+    #[clap(short,long,default_value="30002")]
+    port: u32,
+    script_file_name: String,
 }
 
 #[derive(Clap)]
@@ -39,26 +47,25 @@ enum DashboardServerSubCommand{
 
 #[derive(Clap,Debug)]
 struct DSPlay {
-    address: String,
+    #[clap(long,default_value="127.0.0.1")]
+    host_name:String,
 }
 
 #[derive(Clap,Debug)]
 struct DSLoad {
-    address: String,
+    #[clap(long,default_value="127.0.0.1")]
+    host_name:String,
     file_name: String,
 }
 
 
 fn main() {
     let opts: Opts = Opts::parse();
-
-    // You can handle information about subcommands by requesting their matches by name
-    // (as below), requesting just the name used, or both at the same time
     match opts.subcmd {
-        SubCommand::SendScript(t) => println!("{:?}",t),
+        SubCommand::SendScript(s) => script::send(s.host_name, s.port, s.script_file_name),
         SubCommand::Ds(subcmd) => match subcmd.subsubcmd {
-            DashboardServerSubCommand::Load(l) => println!("{:?}",l),
-            DashboardServerSubCommand::Play(l) => println!("{:?}",l,),
+            DashboardServerSubCommand::Load(l) => dashboard_server::load(l.host_name, l.file_name),
+            DashboardServerSubCommand::Play(l) => dashboard_server::play(l.host_name),
         }
     }
 
