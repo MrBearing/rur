@@ -1,10 +1,13 @@
 [package]
 name = "rur"
-version = "0.0.1"
+version = "0.1.0"
 authors = ["Takumi Okamoto <takumi1988okamoto@gmail.com>"]
+keywords = ["robot","robot control","universal robot","UR","urscript"]
+repository = ""
 edition = "2018"
-license = "MIT OR Apache-2.0"
-description ="Robot control library for UniversaL Robots robot."
+license = "Apache-2.0"
+description ="Robot control library for Universal Robots robot."
+readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 
