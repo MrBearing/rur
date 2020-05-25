@@ -2,7 +2,7 @@
 name = "rur"
 version = "0.1.0"
 authors = ["Takumi Okamoto <takumi1988okamoto@gmail.com>"]
-keywords = ["robot","robot control","universal robot","UR","urscript"]
+keywords = ["robot","robot_control","universal_robots","UR","urscript"]
 repository = "https://github.com/MrBearing/rur"
 edition = "2018"
 license = "Apache-2.0"
