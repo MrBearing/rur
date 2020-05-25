@@ -1,0 +1,5 @@
+def myProg():
+  begin_pos = get_actual_tcp_pose()
+  pos_end = pose_add(begin_pos, p[0.100, 0.0, 0.0, 0.0, 0.0, 0.0])
+  movel(pos_end , a=0.39, v=0.05)  
+end
