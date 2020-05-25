@@ -13,7 +13,7 @@ fn read_file_string(file_path: &str) -> Result<String, io::Error> {
 
 pub fn send(address :&str ,port: u32, script_file_path: &str){
     let script_string =  match read_file_string(script_file_path){
-        Ok(s) => s,
+        Ok(s) => s+"\n",
         Err(e) => {
             eprintln!("Fail to read script file. cause:{}",e);
             return;
