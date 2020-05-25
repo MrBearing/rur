@@ -11,12 +11,27 @@ e-Series : v 5.8
 ## Developing environment
 
 OS: Ubuntu 18.04
+
 e-Series v5.8 [down load here](https://www.universal-robots.com/download/?option=69986#section41511)
 
 ## Usage
 
-[T.B.D]
+send some script
+
+```shell
+rur send_script -r ur_ip_address test.script
+```
+
+Controling Dashboard Server
+
+```shell
+$ rur ds load some_internal_script
+$ rur ds play
+start program...
+```
 
 ## How to install
 
-[T.B.D]
+```shell
+cargo install rur
+```
