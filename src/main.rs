@@ -62,10 +62,10 @@ struct DSLoad {
 fn main() {
     let opts: Opts = Opts::parse();
     match opts.subcmd {
-        SubCommand::SendScript(s) => script::send(s.host_name, s.port, s.script_file_name),
+        SubCommand::SendScript(s) => script::send(&s.host_name, s.port, &s.script_file_name),
         SubCommand::Ds(subcmd) => match subcmd.subsubcmd {
-            DashboardServerSubCommand::Load(l) => dashboard_server::load(l.host_name, l.file_name),
-            DashboardServerSubCommand::Play(l) => dashboard_server::play(l.host_name),
+            DashboardServerSubCommand::Load(l) => dashboard_server::load(&l.host_name, l.file_name),
+            DashboardServerSubCommand::Play(l) => dashboard_server::play(&l.host_name),
         }
     }
 
