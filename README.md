@@ -1,5 +1,7 @@
 # R.U.R
 
+![Build and Test](https://github.com/akeboshi/rur/workflows/Build%20and%20Test/badge.svg)
+
 Rust Universal Robots library
 
 NOT "Rossum's Universal Robots"
