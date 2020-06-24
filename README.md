@@ -19,7 +19,9 @@ e-Series v5.8 [down load here](https://www.universal-robots.com/download/?option
 send some script
 
 ```shell
-rur send_script -r ur_ip_address test.script
+rur send_script -r ur_ip_address test.urscript
+rur send_script -p primary -r ur_ip_address test.urscript
+rur send_script -p secondary -r ur_ip_address test.urscript
 ```
 
 Controling Dashboard Server
