@@ -9,7 +9,7 @@ use rur::dashboard_server;
 #[clap(version = "1.0", author = "Takumi Okamoto <takumi1988okamoto@gmail.com>")]
 struct Opts {
     #[clap(subcommand)]
-    subcmd: SubCommand,
+    subcommand: SubCommand,
 }
 
 #[derive(Clap)]
@@ -34,7 +34,7 @@ struct SendScript{
 #[clap()]
 struct DashboardServer{
     #[clap(subcommand)]
-    subsubcmd: DashboardServerSubCommand,
+    sub_subcommand: DashboardServerSubCommand,
 }
 
 #[derive(Clap)]
@@ -61,13 +61,15 @@ struct DSLoad {
 
 fn main() {
     let opts: Opts = Opts::parse();
-    match opts.subcmd {
-        SubCommand::SendScript(s) => script::send(&s.host_name, s.port, &s.script_file_name),
-        SubCommand::Ds(subcmd) => match subcmd.subsubcmd {
-            DashboardServerSubCommand::Load(l) => dashboard_server::load(&l.host_name, l.file_name),
-            DashboardServerSubCommand::Play(l) => dashboard_server::play(&l.host_name),
+    match opts.subcommand {
+        SubCommand::SendScript(s) =>
+            script::send(&s.host_name, s.port, &s.script_file_name),
+        SubCommand::Ds(subcommand) => match subcommand.sub_subcommand {
+            DashboardServerSubCommand::Load(l) =>
+                dashboard_server::load(&l.host_name, l.file_name),
+            DashboardServerSubCommand::Play(l) =>
+                dashboard_server::play(&l.host_name),
         }
     }
 
-    // more program logic goes here...
 }

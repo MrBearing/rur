@@ -1,5 +1,7 @@
 # R.U.R
 
+![Build and Test](https://github.com/akeboshi/rur/workflows/Build%20and%20Test/badge.svg)
+
 Rust Universal Robots library
 
 NOT "Rossum's Universal Robots"
@@ -14,9 +16,7 @@ URScriptをロボットへ直接送信したり、Dashboard ServerにPlay,Load�
 スクリプトを送信する
 
 ```shell
-rur send_script -r ur_ip_address test.urscript
-rur send_script -p primary -r ur_ip_address test.urscript
-rur send_script -p secondary -r ur_ip_address test.urscript
+rur send-script -r ur_ip_address test.urscript
 ```
 
 Dashboard Serverの操作系統
