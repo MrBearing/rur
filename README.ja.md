@@ -4,7 +4,6 @@ Rust Universal Robots library
 
 NOT "Rossum's Universal Robots"
 
-(現在開発中,以下は妄想です。)
 
 ユニバーサルロボット社のロボットCBシリーズ , eシリーズのロボットをRustからコントロールするためのソフトウェア及び・Rust向けのライブラリです。
 
