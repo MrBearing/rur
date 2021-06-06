@@ -2,7 +2,7 @@
 
 ![Build and Test](https://github.com/akeboshi/rur/workflows/Build%20and%20Test/badge.svg)
 
-Rust Universal Robots library
+Utility software and libraries to control Universal Robots' CB series and e series robots from Rust.
 
 NOT "Rossum's Universal Robots"
 
