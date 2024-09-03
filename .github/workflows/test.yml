@@ -12,6 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: launch UR docker
+      run : docker run --rm -it --name="ursim" universalrobots/ursim_e-series
     - name: Build
       run: cargo build --verbose
     - name: Run tests
